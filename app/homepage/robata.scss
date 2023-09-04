@@ -1,0 +1,74 @@
+@import '../globals';
+
+#robata {
+    background: $off_white;
+
+    h1, .cta {
+        color: $background_dark;
+    }
+    
+    .image_1 {
+        grid-area: 4 / 2 / 6 / 5;
+        height: 54vh;
+    }
+
+    .text {
+        grid-area: 6 / 4 / 7 / 7;
+        display: flex;
+        flex-direction: column;
+        gap: $small;
+        margin: $large auto;
+    }
+
+    .image_2 {
+        grid-area: 5 / 8 / 8 / 12;
+        height: 77.2vh;
+    }
+
+    .image_3 {
+        grid-area: 7 / 4 / 9 / 6;
+        height: 54vh;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .image_1 {
+            grid-area: 4 / 1 / 6 / 4;
+            height: 40.5vh;
+        }
+
+        .text {
+            grid-area: 6 / 2 / 7 / 5;
+        }
+
+        .image_2 {
+            grid-area: 5 / 6 / 8 / 9;
+            height: 57.9vh;
+        }
+
+        .image_3 {
+            grid-area: 7 / 2 / 9 / 4;
+            height: 40.5vh;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .image_1 {
+            grid-area: 3 / 3 / 4 / 5;
+            height: 27vh;
+        }
+
+        .text {
+            grid-area: 4 / 1 / 5 / 5;
+        }
+
+        .image_2 {
+            grid-area: 5 / 1 / 7 / 4;
+            height: 38.6vh;
+        }
+
+        .image_3 {
+            grid-area: 6 / 3 / 8 / 5;
+            height: 27vh;
+        }
+    }
+}

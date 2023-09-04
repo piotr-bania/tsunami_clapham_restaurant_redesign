@@ -1,0 +1,49 @@
+@import '../globals';
+
+#about {
+    background: $background_light;
+    text-align: center;
+
+    .video {
+        grid-area: 4 / 3 / 5 / 11;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 12px 24px #1e1e1e16;
+    }
+
+    .paragraph {
+        grid-area: 5 / 2 / 6 / 12;
+    }
+
+    .cta {
+        grid-area: 6 / 2 / 7 / 12;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .video {
+            grid-area: 4 / 2 / 5 / 8;
+        }
+
+        .paragraph {
+            grid-area: 5 / 1 / 6 / 9;
+        }
+
+        .cta {
+            grid-area: 6 / 1 / 7 / 9;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .video {
+            grid-area: 4 / 1 / 5 / 5;
+        }
+
+        .paragraph {
+            grid-area: 5 / 1 / 6 / 5;
+        }
+
+        .cta {
+            grid-area: 6 / 1 / 7 / 5;
+        }
+    }
+}

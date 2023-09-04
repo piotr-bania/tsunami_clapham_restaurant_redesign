@@ -1,0 +1,62 @@
+@import '../globals.scss';
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 130px;
+    background: $background_gradient;
+    z-index: 100;
+
+    #navbar {
+        padding-top: $large;
+        
+        .nav_left {
+            grid-area: 1 / 1 / 2 / 6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav_center {
+            grid-area: 1 / 6 / 2 / 8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav_right {
+            grid-area: 1 / 8 / 2 / 13;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        #navbar {
+            .nav_left,
+            .nav_right {
+                display: none;
+            }
+
+            .nav_center {
+                grid-area: 1 / 1 / 2 / 9;
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        #navbar {
+            .nav_left,
+            .nav_right {
+                display: none;
+            }
+
+            .nav_center {
+                grid-area: 1 / 1 / 2 / 5;
+            }
+        }
+    }
+}
