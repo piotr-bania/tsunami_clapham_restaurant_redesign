@@ -23,8 +23,12 @@ const Bookings = () => {
             <p className="paragraph">Anticipation is the first spice of any dining experience. At Tsunami, we ensure that from the moment you step in, every element is curated just for you. From our intimate sushi bar seats to the cozy lounge corners, choose the spot that suits your mood. Reserve now and let us set the stage for an unforgettable feast.</p>
 
             <div className='image image_8'>
-                <Image className='image_8' src='/images/13.webp' alt='Tsunami Clapham' fill 
-                objectFit='cover' />
+                <Image
+                    className='image_8'
+                    src='/images/13.webp'
+                    alt='Tsunami Clapham'
+                    fill 
+                />
             </div>
 
             <div className="book">
