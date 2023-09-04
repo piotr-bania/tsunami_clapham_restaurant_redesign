@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tsunami Restaurant Website Redesign
+
+Welcome to the Tsunami Restaurant Website Redesign project! 🌊 This repository contains the source code and assets for the redesign of Tsunami Clapham's official website.
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Project Overview
+
+Tsunami Clapham, a renowned restaurant in London, is getting a digital makeover to offer a more immersive and visually stunning experience to its customers. This project aims to:
+
+- Create an eye-catching and responsive website.
+- Utilize cutting-edge technologies like React Three Fiber, GLSL shaders, and Framer Motion for animations.
+- Enhance user engagement and provide a seamless online experience.
+
+## Features
+
+- **Immersive 3D Elements**: Incorporating React Three Fiber to bring 3D animations and interactive elements to the website.
+
+- **GLSL Shader Effects**: Applying GLSL shaders for captivating visual effects on images and components.
+
+- **Dynamic Animations**: Utilizing Framer Motion to add smooth and dynamic animations to various website elements.
+
+- **Responsive Design**: Ensuring the website looks and functions beautifully on all devices and screen sizes.
+
+- **Seamless Navigation**: Implementing a user-friendly navigation system for easy access to different sections and pages.
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/) - A React framework for building server-rendered applications.
+
+- [React Three Fiber](https://github.com/pmndrs/react-three-fiber) - A React reconciler for Three.js.
+
+- [GLSL](https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language) - GLSL shaders for stunning visual effects.
+
+- [Framer Motion](https://www.framer.com/motion/) - A popular animation library for React.
 
 ## Getting Started
 
-First, run the development server:
+To get started with this project, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Clone this repository to your local machine:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   git clone https://github.com/your-username/tsunami-restaurant-redesign.git
