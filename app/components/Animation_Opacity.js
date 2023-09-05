@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useRef } from 'react'
 import { motion as m, useTransform, useScroll } from 'framer-motion'
 
@@ -10,7 +12,7 @@ const Animation_Opacity = ({ text, className }) => {
         offset: ["end start", "start end"]
     })
 
-    const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0])
+    const opacity = useTransform(scrollYProgress, [0.7, 1], [1, 0])
 
     return (
         <m.p

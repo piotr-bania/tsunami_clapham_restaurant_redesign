@@ -8,30 +8,77 @@
     }
 
     .paragraph {
-        grid-area: 3 / 1 / 4 / 13;
+        grid-area: 3 / 7 / 4 / 10;
+        text-align: right;
     }
 
     .cta {
-        grid-area: 4 / 1 / 5 / 13;
+        grid-area: 4 / 7 / 5 / 10;
+        text-align: right;
+    }
+
+    .image_1 {
+        grid-area: 3 / 10 / 7 / 12;
+        height: 54vh;
+    }
+
+    .image_2 {
+        grid-area: 5 / 2 / 8 / 6;
+        height: 72vh;
+    }
+
+    .image_3 {
+        grid-area: 6 / 5 / 7 / 9;
+        height: 38vh;
     }
 
     @media screen and (min-width: 768px) and (max-width: 1023px) {
         .paragraph {
-            grid-area: 3 / 1 / 4 / 9;
+            grid-area: 3 / 3 / 4 / 7;
         }
 
         .cta {
-            grid-area: 4 / 1 / 5 / 9;
+            grid-area: 4 / 4 / 5 / 7;
+        }
+
+        .image_1 {
+            grid-area: 3 / 7 / 7 / 9;
+            height: 40.5vh;
+        }
+
+        .image_2 {
+            grid-area: 6 / 1 / 9 / 5;
+            height: 54.1vh;
+        }
+
+        .image_3 {
+            grid-area: 7 / 4 / 8 / 8;
+            height: 28.5vh;
         }
     }
 
     @media screen and (max-width: 767px) {
+        .image_1 {
+            grid-area: 3 / 1 / 4 / 3;
+            height: 27vh;
+        }
+
         .paragraph {
-            grid-area: 3 / 1 / 4 / 5;
+            grid-area: 4 / 2 / 5 / 5;
         }
 
         .cta {
-            grid-area: 4 / 1 / 5 / 5;
+            grid-area: 5 / 2 / 6 / 5;
+        }
+
+        .image_2 {
+            grid-area: 6 / 2 / 7 / 5;
+            height: 36vh;
+        }
+
+        .image_3 {
+            grid-area: 7 / 1 / 8 / 4;
+            height: 19vh;
         }
     }
 }

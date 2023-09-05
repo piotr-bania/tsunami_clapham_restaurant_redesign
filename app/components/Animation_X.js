@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useRef } from 'react'
 import { motion as m, useTransform, useScroll } from 'framer-motion'
 import Image from 'next/image'
@@ -11,7 +13,7 @@ const Animation_Opacity = ({ src, className }) => {
         offset: ["end start", "start end"]
     })
 
-    const translateX = useTransform(scrollYProgress, [0, 1], [25, -25])
+    const translateX = useTransform(scrollYProgress, [0, 1], [30, -30])
 
     return (
         <m.div

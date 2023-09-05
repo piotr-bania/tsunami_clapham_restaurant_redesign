@@ -1,5 +1,3 @@
-'use client'
-
 import '../homepage/robata.scss'
 import Link from 'next/link'
 import Headings from '../components/Headings'
@@ -22,7 +20,7 @@ const Robata = () => {
 
             <Animation_Y
                 className='image_1'
-                src='/images/4old.webp'
+                src='/images/58old.webp'
                 alt='Tsunami Clapham'
                 fill
                 />
@@ -38,14 +36,14 @@ const Robata = () => {
 
             <Animation_Scale
                 className='image_2'
-                src='/images/7old.webp'
+                src='/images/84old.webp'
                 alt='Tsunami Clapham'
                 fill 
                 />
 
             <Animation_X
                 className='image_3'
-                src='/images/5old.webp'
+                src='/images/99old.webp'
                 alt='Tsunami Clapham'
                 fill
                 />

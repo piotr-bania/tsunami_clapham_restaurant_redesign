@@ -1,7 +1,10 @@
 import '../homepage/sushi.scss'
 import Link from 'next/link'
-import Image from 'next/image'
 import Headings from '../components/Headings'
+import Animation_X from '../components/Animation_X'
+import Animation_Y from '../components/Animation_Y'
+import Animation_Scale from '../components/Animation_Scale'
+import Animation_Opacity from '../components/Animation_Opacity'
 
 const Sushi = () => {
     return (
@@ -14,12 +17,30 @@ const Sushi = () => {
             />
             <div className='line bottom_left'></div>
             
-            <p className="paragraph text_dark">Dive deep into our sushi menu, where every roll is a fusion of fresh ingredients, masterful techniques, and the passion of our seasoned chefs.</p>
+            <Animation_Opacity className="paragraph text_dark"
+                text="Dive deep into our sushi menu, where every roll is a fusion of fresh ingredients, masterful techniques, and the passion of our seasoned chefs."
+            />
 
-            {/* <div className='image image_1'>
-                <Image className='image_1' src='/images/1.webp' alt='Tsunami Clapham' fill 
-                objectFit='cover' />
-            </div> */}
+            <Animation_Y
+                className='image_1'
+                src='/images/1old.webp'
+                alt='Tsunami Clapham'
+                fill
+            />
+
+            <Animation_X
+                className='image_2'
+                src='/images/76.webp'
+                alt='Tsunami Clapham'
+                fill
+            />
+
+            <Animation_Scale
+                className='image_3'
+                src='/images/21.webp'
+                alt='Tsunami Clapham'
+                fill
+            />
 
             <Link href='/menu' className="cta text_dark">View Sushi Specials</Link>
         </section>
