@@ -20,7 +20,7 @@ const page = () => {
                 </Suspense>
                 <OrbitControls
                     autoRotate={true}
-                    autoRotateSpeed={0.1}
+                    autoRotateSpeed={0.25}
                     rotateSpeed={0.1}
                     enablePan={false}
                     enableZoom={false}
