@@ -27,23 +27,6 @@ const Gallery = () => {
     }
 
     const textureLoader = new TextureLoader()
-    const placeholderTexture = textureLoader.load(getRandomImage)
-
-    const waveMaterial = useRef(new ShaderMaterial({
-        uniforms: {
-            uTime: { value: 0 },
-            uFrequency: { value: new THREE.Vector2(0.5, 0.25) },
-            uTransparency: { value: 1 },
-            uTexture: { value: placeholderTexture },
-        },
-        vertexShader: wave_vert,
-        fragmentShader: wave_frag,
-        side: 2,
-    }))
-
-    useFrame((state, delta) => {
-        waveMaterial.current.uniforms.uTime.value += delta
-    })
 
     const icosahedronVertices = []
     const radius = 15
@@ -59,23 +42,44 @@ const Gallery = () => {
 
     return (
         <Icosahedron args={[radius, 1, 1]}>
-            {icosahedronVertices.map((vertex, index) => (
-                <mesh
-                    key={index}
-                    position={[vertex.x, vertex.y, vertex.z]}
-                    rotation={[0, 0, 0]}
-                    onUpdate={(self) => {
-                        self.lookAt(new THREE.Vector3(0, 0, 0))
-                    }}
-                >
-                    <planeGeometry args={[6, 4, 15, 10]} />
-                    <primitive
-                        object={waveMaterial.current}
-                    />
-                    <meshBasicMaterial map={textureLoader.load(getRandomImage())} side={THREE.DoubleSide}/>
-                </mesh>
-            ))}
-            <meshBasicMaterial wireframe color={'#1e1e1e'} />
+            {icosahedronVertices.map((vertex, index) => {
+                // Generate a random image path for each plane
+                const randomImage = getRandomImage();
+
+                const combinedMaterial = useRef(new ShaderMaterial({
+                    uniforms: {
+                        uTime: { value: 0 },
+                        uFrequency: { value: new THREE.Vector2(1, 0.5) },
+                        uTransparency: { value: 1 },
+                        uTexture: { value: textureLoader.load(randomImage) }, // Load the random image
+                    },
+                    vertexShader: wave_vert,
+                    fragmentShader: wave_frag,
+                    side: THREE.DoubleSide,
+                    transparent: true,
+                    opacity: 0.75,
+                }));
+
+                useFrame((state, delta) => {
+                    combinedMaterial.current.uniforms.uTime.value += delta;
+                });
+
+                return (
+                    <mesh
+                        key={index}
+                        position={[vertex.x, vertex.y, vertex.z]}
+                        rotation={[0, 0, 0]}
+                        onUpdate={(self) => {
+                            self.lookAt(new THREE.Vector3(0, 0, 0))
+                        }}
+                    >
+                        <planeGeometry args={[6, 4, 15, 10]} />
+                        {/* Use the combined material for both the image and wave effect */}
+                        <primitive object={combinedMaterial.current} position={[0, 0, 0.1]} />
+                    </mesh>
+                );
+            })}
+            <meshBasicMaterial wireframe color={'#1e1e1e'} transparent opacity={0} />
         </Icosahedron>
     )
 }
