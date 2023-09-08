@@ -7,7 +7,7 @@ import { ShaderMaterial, TextureLoader } from 'three'
 
 import wave_vert  from '../../public/shaders/wave.vert'
 import wave_frag  from '../../public/shaders/wave.frag'
-import { Icosahedron } from '@react-three/drei'
+import { Cylinder, Icosahedron } from '@react-three/drei'
 
 const images = [
     '/images/1old.webp',
@@ -165,45 +165,100 @@ const Gallery = () => {
         icosahedronVertices.push({ x, y, z })
     }
 
+    // const cylinderVertices = []
+    //     const radius = 12
+    //     const height = 1
+    //     const numVertices = 16
+
+    //     for (let i = 0; i < numVertices; i++) {
+    //         const angle = (i / numVertices) * Math.PI * 2
+    //         const x = radius * Math.cos(angle)
+    //         const y = radius * Math.sin(angle)
+    //         const z = (i / numVertices) * height - height / 2
+
+    //         cylinderVertices.push({ x, y, z })
+    // }
+
     return (
-        <Icosahedron args={[radius, 1, 1]}>
-            {icosahedronVertices.map((vertex, index) => {
-                const randomImage = getRandomImage()
+        <>
+            <Icosahedron args={[radius, 1, 1]}>
+                {icosahedronVertices.map((vertex, index) => {
+                    const randomImage = getRandomImage()
 
-                const combinedMaterial = useRef(new ShaderMaterial({
-                    uniforms: {
-                        uTime: { value: 0 },
-                        uFrequency: { value: new THREE.Vector2(1, 0.5) },
-                        uTransparency: { value: 1 },
-                        uTexture: { value: textureLoader.load(randomImage) },
-                    },
-                    vertexShader: wave_vert,
-                    fragmentShader: wave_frag,
-                    side: THREE.DoubleSide,
-                    transparent: true,
-                    opacity: 0.75,
-                }))
+                    const combinedMaterial = useRef(new ShaderMaterial({
+                        uniforms: {
+                            uTime: { value: 0 },
+                            uFrequency: { value: new THREE.Vector2(1, 0.5) },
+                            uTransparency: { value: 1 },
+                            uTexture: { value: textureLoader.load(randomImage) },
+                        },
+                        vertexShader: wave_vert,
+                        fragmentShader: wave_frag,
+                        side: THREE.DoubleSide,
+                        transparent: true,
+                        opacity: 0.75,
+                    }))
 
-                useFrame((state, delta) => {
-                    combinedMaterial.current.uniforms.uTime.value += delta
-                })
+                    useFrame((state, delta) => {
+                        combinedMaterial.current.uniforms.uTime.value += delta
+                    })
 
-                return (
-                    <mesh
-                        key={index}
-                        position={[vertex.x, vertex.y, vertex.z]}
-                        rotation={[0, 0, 0]}
-                        onUpdate={(self) => {
-                            self.lookAt(new THREE.Vector3(0, 0, 0))
-                        }}
-                    >
+                    return (
+                        <mesh
+                            key={index}
+                            position={[vertex.x, vertex.y, vertex.z]}
+                            rotation={[0, 0, 0]}
+                            onUpdate={(self) => {
+                                self.lookAt(new THREE.Vector3(0, 0, 0))
+                            }}
+                        >
+                            <planeGeometry args={[6, 4, 15, 10]} />
+                            <primitive object={combinedMaterial.current} position={[0, 0, 0.1]} />
+                        </mesh>
+                    )
+                })}
+                <meshBasicMaterial wireframe color={'#ffffff'} transparent opacity={0} />
+            </Icosahedron>
+
+            {/* <Cylinder args={[radius, radius, height, 16, 0]}>
+                {cylinderVertices.map((vertex, index) => {
+                    const randomImage = getRandomImage()
+
+                    const combinedMaterial = useRef(new ShaderMaterial({
+                        uniforms: {
+                            uTime: { value: 0 },
+                            uFrequency: { value: new THREE.Vector2(1, 0.5) },
+                            uTransparency: { value: 1 },
+                            uTexture: { value: textureLoader.load(randomImage) },
+                        },
+                        vertexShader: wave_vert,
+                        fragmentShader: wave_frag,
+                        side: THREE.DoubleSide,
+                        transparent: true,
+                        opacity: 0.75,
+                    }))
+
+                    useFrame((state, delta) => {
+                        combinedMaterial.current.uniforms.uTime.value += delta
+                    })
+
+                    return (
+                        <mesh
+                            key={index}
+                            position={[vertex.x, vertex.y, vertex.z]}
+                            rotation={[0, 0, 0]}
+                            onUpdate={(self) => {
+                                self.lookAt(new THREE.Vector3(0, 0, 0));
+                            }}
+                        >
                         <planeGeometry args={[6, 4, 15, 10]} />
-                        <primitive object={combinedMaterial.current} position={[0, 0, 0.1]} />
-                    </mesh>
+                        <primitive object={combinedMaterial.current} />
+                        </mesh>
                 )
-            })}
-            <meshBasicMaterial wireframe color={'#ffffff'} transparent opacity={0} />
-        </Icosahedron>
+                })}
+                <meshBasicMaterial wireframe color={'#ffffff'} transparent opacity={0.5} />
+            </Cylinder> */}
+        </>
     )
 }
 

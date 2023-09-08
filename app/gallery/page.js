@@ -14,14 +14,14 @@ const page = () => {
             animate={{opacity: 1, transition: { delay: 0.1, duration: 2}}}
             >
             <Canvas>
-                <PerspectiveCamera makeDefault position={[0, 0, 1]} />
+                <PerspectiveCamera makeDefault position={[0, 0, 15]} />
                 <Suspense fallback={null}>
                     <Gallery />
                 </Suspense>
                 <OrbitControls
-                    autoRotate={true}
+                    autoRotate={false}
                     autoRotateSpeed={0.25}
-                    rotateSpeed={0.1}
+                    rotateSpeed={0.2}
                     enablePan={false}
                     enableZoom={false}
                     minPolarAngle={Math.PI / 2.5}
@@ -29,7 +29,7 @@ const page = () => {
                     // minDistance={25}
                     // maxDistance={25}
                     enableDamping={true}
-                    dampingFactor={0.025}
+                    dampingFactor={0.05}
                 />
             </Canvas>
         </m.div>
