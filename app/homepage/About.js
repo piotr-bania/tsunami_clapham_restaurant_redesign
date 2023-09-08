@@ -3,7 +3,7 @@
 import '../homepage/about.scss'
 import Link from 'next/link'
 import Headings from '../components/Headings'
-import Animation_Opacity from '../components/Animation_Opacity'
+import Animation_Opacity from '../components/animations/Animation_Opacity'
 
 const About = () => {
     return (
