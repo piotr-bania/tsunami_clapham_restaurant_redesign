@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { PerspectiveCamera } from '@react-three/drei'
 import Loader from "./components/Loader"
-import { motion as m } from 'framer-motion'
+import { AnimatePresence, motion as m } from 'framer-motion'
 
 import Hero from "./homepage/Hero"
 import About from "./homepage/About"
@@ -22,7 +22,7 @@ export default function Home() {
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false)
-        }, 3000)
+        }, 1000)
     }, [])
 
     return (

@@ -22,7 +22,7 @@ const Navbar = () => {
                 <div className='nav_right'>
                     <Link href='orders'>Orders</Link>
                     <Link href='/gallery'>Gallery</Link>
-                    <Link href='/Engage'>Engage & Voices</Link>
+                    <Link href='/engage'>Engage & Voices</Link>
                     <Link href='/contact'>Reach Out</Link>
                 </div>
             </section>

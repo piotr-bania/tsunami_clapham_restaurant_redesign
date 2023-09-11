@@ -15,7 +15,7 @@ const Loader = () => {
     const waveMaterial = new ShaderMaterial({
         uniforms: {
             uTime: { value: 0 },
-            uFrequency: { value: new THREE.Vector2(0.5, 1) },
+            uFrequency: { value: new THREE.Vector2(0.025, 0.05) },
             uTransparency: { value: 1 },
             uTexture: { value: image },
         },

@@ -1,6 +1,10 @@
 import '../homepage/drinks.scss'
 import Link from 'next/link'
 import Headings from '../components/Headings'
+import Animation_X from '../components/animations/Animation_X'
+import Animation_Y from '../components/animations/Animation_Y'
+import Animation_Scale from '../components/animations/Animation_Scale'
+import Animation_Opacity from '../components/animations/Animation_Opacity'
 
 const Drinks = () => {
 
@@ -13,8 +17,31 @@ const Drinks = () => {
                 position="right"
             />
             <div className='line bottom_right'></div>
-            
-            <p className="paragraph text_dark">From classic concoctions to signature mixes, our refurbished bar offers a cocktail for every palate. Revel in the chic ambiance and toast to unforgettable moments.</p>
+
+            <Animation_Opacity className="paragraph text_dark"
+                text="From classic concoctions to signature mixes, our refurbished bar offers a cocktail for every palate. Revel in the chic ambiance and toast to unforgettable moments."
+            />
+
+            <Animation_Y
+                className='image_1'
+                src='/images/93.webp'
+                alt='Tsunami Clapham'
+                fill
+            />
+
+            <Animation_X
+                className='image_2'
+                src='/images/47.webp'
+                alt='Tsunami Clapham'
+                fill
+            />
+
+            <Animation_Scale
+                className='image_3'
+                src='/images/39.webp'
+                alt='Tsunami Clapham'
+                fill
+            />
 
             <Link href='/menu' className="cta text_dark">Explore Our Cocktails</Link>
         </section>

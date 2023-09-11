@@ -2,6 +2,8 @@ import '../homepage/bookings.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import Headings from '../components/Headings'
+import Animation_Scale from '../components/animations/Animation_Scale'
+import Animation_Opacity from '../components/animations/Animation_Opacity'
 
 const Bookings = () => {
 
@@ -19,17 +21,17 @@ const Bookings = () => {
                 position="left"
             />
             <div className='line bottom_left'></div>
-            
-            <p className="paragraph">Anticipation is the first spice of any dining experience. At Tsunami, we ensure that from the moment you step in, every element is curated just for you. From our intimate sushi bar seats to the cozy lounge corners, choose the spot that suits your mood. Reserve now and let us set the stage for an unforgettable feast.</p>
 
-            <div className='image image_8'>
-                <Image
-                    className='image_8'
-                    src='/images/13.webp'
-                    alt='Tsunami Clapham'
-                    fill 
-                />
-            </div>
+            <Animation_Opacity className="paragraph"
+                text="Anticipation is the first spice of any dining experience. At Tsunami, we ensure that from the moment you step in, every element is curated just for you. From our intimate sushi bar seats to the cozy lounge corners, choose the spot that suits your mood. Reserve now and let us set the stage for an unforgettable feast."
+            />
+
+            <Animation_Scale
+                className='image_1'
+                src='/images/121.webp'
+                alt='Tsunami Clapham'
+                fill
+            />
 
             <div className="book">
                 <p>Reservation Date</p>

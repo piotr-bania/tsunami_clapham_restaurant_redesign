@@ -8,13 +8,13 @@
         margin: $large auto;
     }
 
-    .image_8 {
-        grid-area: 3 / 2 / 6 / 6;
+    .image_1 {
+        grid-area: 3 / 2 / 7 / 7;
         height: 100%;
     }
 
     .book {
-        grid-area: 4 / 8 / 5 / 11;
+        grid-area: 5 / 7 / 6 / 11;
 
         .input {
             background: $off_white;
@@ -35,8 +35,10 @@
     }
 
     .cta {
-        grid-area: 5 / 8 / 6 / 12;
+        grid-area: 6 / 7 / 7 / 11;
         margin-bottom: $large 0;
+        display: flex;
+        justify-content: flex-end;
     }
 
     @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -44,8 +46,8 @@
             grid-area: 3 / 5 / 4 / 9;
         }
 
-        .image_8 {
-            grid-area: 3 / 1 / 5 / 4;
+        .image_1 {
+            grid-area: 3 / 1 / 5 / 5;
         }
 
         .book {
@@ -59,19 +61,21 @@
 
     @media screen and (max-width: 767px) {
         .paragraph {
-            grid-area: 3 / 1 / 4 / 5;
+            grid-area: 4 / 1 / 5 / 5;
         }
 
-        .image_8 {
-            display: none;
+        .image_1 {
+            grid-area: 3 / 1 / 4 / 5;
+            height: 24vh;
         }
 
         .book {
-            grid-area: 4 / 2 / 5 / 5;
+            grid-area: 5 / 2 / 6 / 5;
         }
 
         .cta {
-            grid-area: 5 / 2 / 6 / 5;
+            grid-area: 6 / 2 / 7 / 5;
+            justify-content: flex-start;
         }
     }
 }
