@@ -1,7 +1,5 @@
 import './insta_feed.scss'
 
-import { useState, useEffect } from 'react'
-import { motion as m, AnimatePresence } from 'framer-motion'
 import Animation_X from '../components/animations/Animation_X'
 
 const Insta_Feed = () => {

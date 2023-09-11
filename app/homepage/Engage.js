@@ -1,9 +1,6 @@
 import '../homepage/engage.scss'
 import Link from 'next/link'
 import Headings from '../components/Headings'
-import Animation_X from '../components/animations/Animation_X'
-import Animation_Y from '../components/animations/Animation_Y'
-import Animation_Scale from '../components/animations/Animation_Scale'
 import Animation_Opacity from '../components/animations/Animation_Opacity'
 import Insta_Feed from '../components/Insta_Feed'
 
