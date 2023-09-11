@@ -8,20 +8,23 @@
     }
 
     .paragraph {
-        grid-area: 3 / 1 / 4 / 13;
+        grid-area: 4 / 3 / 5 / 11;
+        text-align: center;
     }
 
     .cta {
-        grid-area: 4 / 1 / 5 / 13;
+        grid-area: 5 / 3 / 6 / 11;
+        display: flex;
+        justify-content: center;
     }
 
     @media screen and (min-width: 768px) and (max-width: 1023px) {
         .paragraph {
-            grid-area: 5 / 1 / 6 / 9;
+            grid-area: 5 / 2 / 6 / 8;
         }
 
         .cta {
-            grid-area: 6 / 1 / 7 / 9;
+            grid-area: 6 / 2 / 7 / 8;
         }
     }
 
