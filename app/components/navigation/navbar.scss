@@ -9,6 +9,13 @@ nav {
     background: $background_gradient;
     z-index: 100;
 
+    a {
+        font-size: calc($link * 0.6);
+        font-weight: 100;
+        color: $off_white;
+        text-transform: uppercase;
+    }
+
     #navbar {
         padding-top: $large;
         

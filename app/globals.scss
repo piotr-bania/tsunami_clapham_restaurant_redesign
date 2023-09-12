@@ -14,6 +14,11 @@
     src: url(../public/fonts/elagern/Elagern_Italic.ttf);
 }
 
+@font-face {
+    font-family: "Albra";
+    src: url(../public/fonts/albra/AlbraLight.otf);
+}
+
 /* ------------------------------ Variables ------------------------------ */
 $primary: #e7b46c;
 $accent: #ff6b6b;
@@ -25,20 +30,18 @@ $off_white: #f5f5f5;
 $white: #ffffff;
 
 // ---------- Fonts ----------
-$header_font: 'Dolce_Amyara',
-sans-serif;
-$subheader_font: 'Elagern_Italic',
+$header_font: 'Albra',
 sans-serif;
 $text_font: 'Museo',
 sans-serif;
 
 // ---------- Fluid fonts ----------
-$link: clamp(0.89rem, 0.57vw + 0.75rem, 1.33rem);
-$paragraph: clamp(1rem, 0.65vw + 0.84rem, 1.5rem);
-$header_4: clamp(1.13rem, 0.73vw + 0.94rem, 1.69rem);
-$header_3: clamp(1.27rem, 0.82vw + 1.06rem, 1.9rem);
-$header_2: clamp(1.42rem, 0.92vw + 1.19rem, 2.14rem);
-$header_1: clamp(1.6rem, 1.03vw + 1.34rem, 2.4rem);
+$paragraph: clamp(1rem, 0.5vw + 0.88rem, 1.38rem);
+$link: clamp(1.25rem, 0.63vw + 1.09rem, 1.72rem);
+$header_4: clamp(1.56rem, 0.78vw + 1.37rem, 2.15rem);
+$header_3: clamp(1.95rem, 0.98vw + 1.71rem, 2.69rem);
+$header_2: clamp(2.44rem, 1.22vw + 2.14rem, 3.36rem);
+$header_1: clamp(3.05rem, 1.53vw + 2.67rem, 4.2rem);
 
 // ---------- Fluid space ----------
 $small: clamp(1.13rem, calc(1.04rem + 0.41vw), 1.50rem);
@@ -76,6 +79,7 @@ h4 {
     color: $white;
     font-family: $header_font;
     font-weight: 100;
+    line-height: 0.8;
     padding: 0;
     margin: 0;
 }
@@ -83,16 +87,14 @@ h4 {
 h1 {
     font-size: $header_1;
     text-transform: uppercase;
-    line-height: 1.5;
 }
 
 h2 {
     font-size: $header_2;
-    font-family: $subheader_font;
-    font-size: calc($header_2 * 2.5);
+    font-style: italic;
+    font-weight: 100;
     color: $primary;
     text-align: right;
-    line-height: 0.8;
 }
 
 h3 {
@@ -110,8 +112,9 @@ p {
 }
 
 a {
-    font-family: $text_font;
+    font-family: $header_font;
     font-size: $link;
+    font-weight: 100;
     color: $off_white;
     line-height: 1.8;
     text-decoration: underline transparent 2px;
