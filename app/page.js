@@ -6,12 +6,12 @@ import Drinks from "./homepage/Drinks"
 import Bookings from "./homepage/Bookings"
 import Orders from "./homepage/Orders"
 import Engage from "./homepage/Engage"
-import Page_Transitions from "./components/transitions/Page_Transitions"
+
 
 export default function Home() {
 
     return (
-        <Page_Transitions>
+        <>
             <Hero />
             <About />
             <Robata />
@@ -20,6 +20,6 @@ export default function Home() {
             <Bookings />
             <Orders />
             <Engage />
-        </Page_Transitions>
+        </>
     )
 }
