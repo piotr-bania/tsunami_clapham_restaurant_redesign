@@ -2,21 +2,26 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 import Image from 'next/image'
 import './navbar.scss'
+
 import Page_Transitions from '../transitions/Page_Transitions'
+import Load_Transitions from '../transitions/Load_Transitions'
 
 const Navbar = () => {
-    const [done, setDone] = useState(false)
+    const [cover, setCover] = useState(false)
+    const [reveal, setReveal] = useState(false)
     const router = useRouter()
 
     const handleDone = (route) => {
-        setDone(true)
+        if (router.pathname === route) return
+        setCover(true)
 
         const navigate = () => {
-            router.push(route)
-            setDone(false)
+            router.push(route).then(() => {
+                setCover(false)
+                setReveal(true)
+            })
         }
 
         setTimeout(navigate, 1500)
@@ -24,7 +29,8 @@ const Navbar = () => {
 
     return (
         <nav>
-            {done && <Page_Transitions done={() => setDone(false)} />}
+            {cover && <Page_Transitions done={() => setCover(false)} />}
+            {reveal && <Load_Transitions done={() => setReveal(false)} />}
             <section id='navbar'>
                 <div className='nav_left'>
                     <a onClick={() => handleDone('/')}>Homepage</a>
@@ -40,7 +46,7 @@ const Navbar = () => {
                 <div className='nav_right'>
                     <a onClick={() => handleDone('/orders')}>Orders</a>
                     <a onClick={() => handleDone('/gallery')}>Gallery</a>
-                    <Link onClick={() => handleDone('/engage')}>Engage & Voices</Link>
+                    <a onClick={() => handleDone('/engage')}>Engage & Voices</a>
                     <a onClick={() => handleDone('/contact')}>Reach Out</a>
                 </div>
             </section>

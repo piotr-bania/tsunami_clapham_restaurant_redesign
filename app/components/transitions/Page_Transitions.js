@@ -3,16 +3,32 @@
 import { motion as m, AnimatePresence } from 'framer-motion'
 
 const transitionVariants = {
-    initial: { height: '0vh', opacity: 0 },
-    animate: { height: '100vh', opacity: 1, transition: { duration: 1.5 } },
-    exit: { height: '0vh', opacity: 0, transition: { duration: 1.5 } }
+    initial: { height: '0vh' },
+    animate: { 
+        height: '100vh', 
+        transition: { 
+            duration: 1.5,
+            ease: "easeInOut"
+        } 
+    },
+    exit: { 
+        height: '0vh', 
+        transition: { 
+            duration: 1.5,
+            ease: "easeInOut"
+        } 
+    }
 }
 
-const Page_Transitions = ({done}) => {
+const Page_Transitions = ({done, reverse}) => {
+
+    const variants = reverse ? {...transitionVariants, initial: "exit", animate: "initial"} : transitionVariants;
+
 
     return (
         <AnimatePresence mode='wait'>
             <m.div
+                id='page_transition'
                 key="page-transition"
                 initial="initial"
                 animate="animate"
@@ -22,8 +38,7 @@ const Page_Transitions = ({done}) => {
                 style={{
                 position: 'fixed',
                 width: '100%',
-                background: 'blue',
-                zIndex: 1
+                background: '#e7b46c'
                 }}
                 >
             </m.div>
