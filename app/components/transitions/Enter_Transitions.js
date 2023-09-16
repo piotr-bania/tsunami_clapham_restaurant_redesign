@@ -20,7 +20,7 @@ const loadTransitionVariants = {
     }
 }
 
-const Load_Transitions = ({ done }) => {
+const Enter_Transitions = ({ done }) => {
     return (
         <AnimatePresence mode='wiat'>
             <m.div
@@ -43,4 +43,4 @@ const Load_Transitions = ({ done }) => {
     )
 }
 
-export default Load_Transitions
+export default Enter_Transitions

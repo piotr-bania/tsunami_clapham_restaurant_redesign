@@ -1,4 +1,4 @@
-import Page_Transitions from "../components/transitions/Page_Transitions"
+import Page_Transitions from "../components/transitions/Exit_Transitions"
 
 const page = () => {
     return (

@@ -6,7 +6,7 @@ import Drinks from "./homepage/Drinks"
 import Bookings from "./homepage/Bookings"
 import Orders from "./homepage/Orders"
 import Engage from "./homepage/Engage"
-import Page_Transitions from "./components/transitions/Page_Transitions"
+import Page_Transitions from "./components/transitions/Exit_Transitions"
 
 export default function Home() {
 

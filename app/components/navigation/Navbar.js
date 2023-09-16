@@ -5,32 +5,25 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import './navbar.scss'
 
-import Page_Transitions from '../transitions/Page_Transitions'
-import Load_Transitions from '../transitions/Load_Transitions'
+import Exit_Transitions from '../transitions/Exit_Transitions'
 
 const Navbar = () => {
-    const [cover, setCover] = useState(false)
-    const [reveal, setReveal] = useState(false)
+    const [exit, setExit] = useState(false)
+    const [done, setDone] = useState(false)
     const router = useRouter()
 
     const handleDone = (route) => {
-        if (router.pathname === route) return
-        setCover(true)
+        setExit(true)
 
-        const navigate = () => {
-            router.push(route).then(() => {
-                setCover(false)
-                setReveal(true)
-            })
-        }
-
-        setTimeout(navigate, 1500)
+        setOnAnimationComplete(() => () => {
+            setExit(false)
+            router.push(route)
+        })
     }
 
     return (
         <nav>
-            {cover && <Page_Transitions done={() => setCover(false)} />}
-            {reveal && <Load_Transitions done={() => setReveal(false)} />}
+            {exit && <Exit_Transitions done={() => setExit(false)} />}
             <section id='navbar'>
                 <div className='nav_left'>
                     <a onClick={() => handleDone('/')}>Homepage</a>

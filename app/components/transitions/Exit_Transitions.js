@@ -20,11 +20,7 @@ const transitionVariants = {
     }
 }
 
-const Page_Transitions = ({done, reverse}) => {
-
-    const variants = reverse ? {...transitionVariants, initial: "exit", animate: "initial"} : transitionVariants;
-
-
+const Exit_Transitions = ({done}) => {
     return (
         <AnimatePresence mode='wait'>
             <m.div
@@ -46,4 +42,4 @@ const Page_Transitions = ({done, reverse}) => {
     )
 }
 
-export default Page_Transitions
+export default Exit_Transitions
