@@ -13,7 +13,7 @@ const Animation_Scale = ({ src, className }) => {
         offset: ["end start", "start end"]
     })
 
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85])
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.75])
 
     return (
         <m.div

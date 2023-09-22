@@ -10,6 +10,8 @@ import Page_Transitions from "./components/transitions/Exit_Transitions"
 
 export default function Home() {
 
+    
+
     return (
         <>
             <Hero />
